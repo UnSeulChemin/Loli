@@ -1,0 +1,21 @@
+body
+{
+    font-family: var(--font-family);
+    background-color: var(--background-color-body);
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1
+{
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--color-white);
+}
+
+a
+{
+    text-decoration: none;
+}

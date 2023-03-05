@@ -1,7 +1,6 @@
 header
 {
-    width: 100%;
-    background-color: var(--background_color_header);
+    background-color: var(--background-color-header);
 }
 
 header nav
@@ -9,22 +8,18 @@ header nav
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+
+    padding: 20px 20px;
 }
 
 header nav h1
 {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #fff;
-
     margin-right: 10px;
 }
 
 header nav h1 a
 {
-    text-decoration: none;
-    color: #fff;
+    color: var(--color-white);
 }
 
 header nav ul
@@ -35,7 +30,6 @@ header nav ul
 
 header nav ul li
 {
-    padding: 10px 0;
     margin-right: 10px;
 }
 
@@ -49,5 +43,5 @@ header nav ul li a
 
 header nav ul li a:hover
 {
-    color: #fff;
+    color: var(--color-white);
 }
