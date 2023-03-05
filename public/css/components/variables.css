@@ -1,0 +1,10 @@
+:root
+{
+    /* Font */
+    --font-family: 'Open Sans', sans-serif;
+
+    /* Color */
+    --background_color_header: #333333;
+    --background_color_body: #d9deda;
+    --color_fff: #ffffff;
+}

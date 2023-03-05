@@ -1,0 +1,94 @@
+
+php bin/console
+OU
+symfony console
+
+// STARTER
+
+créer un nouveau projet.
+= symfony new 'nom du projet' --webapp
+
+pour voir les exigences.
+= symfony check:requirements
+
+pour lancer le serveur.
+= symfony server:start
+
+// MAKER
+
+pour créer un controller.
+= symfony console make:controller
+
+pour créer une entité.
+= symfony console make:entity
+
+modifier une entité.
+= symfony console make:entity 'entity exist name'
+
+// MAKER SPECIAL
+
+créer la table user de cette façon.
+= la table user qui servira pour l'authentification.
+= créer en plus le fichier security.yaml
+= symfony console make:user
+
+créer l'authentification. (faire le login et logout)
+= met à jour security.yaml
+= symony console make:auth (1, 'UsersAuthenticator', ..default)
+
+créer l'authentification. (faire l'authentification)
+= symfony console make:registration-form (yes, no, yes)
+
+créer une data fixtures de base (ATTENTION ! seulement si commande : composer require --dev orm-fixtures )
+= symfony console make:fixtures 'nom'
+
+// DATA FIXTURES
+
+créer les data fixtures.
+= composer require --dev orm-fixtures
+= permets par la suite de faire symfony console make:fixtures
+
+créer les fausses données.
+= composer require fakerphp/faker
+
+executer les data fixtures.
+= symfony console doctrine:fixtures:load
+= symfony console d:f:l
+= symfony console d:f:l --no-interaction (pour éviter de répondre 'yes')
+
+supprimer toutes les tables puis.
+= symfony console doctrine:schema:update --force (recréer la base de données en empty)
+= symfony console d:f:l --no-interaction (on recréer les fixtures)
+
+// PAGE D'ERREURS
+
+installer twigpack.
+= composer require symfony/twig-pack
+= puis créer dans template : bundles/TwigBundle/Exception/error404.html.twig
+= tester les erreurs en dev : https://127.0.0.1:8000/_error/404
+
+// DB
+
+pour créer la base de données
+= symfony console doctrine:database:create
+
+créer une migration.
+= symfony console make:migration
+
+exécuter la migration.
+= symfony console doctrine:migrations:migrate
+
+supprimer la base de données.
+= symfony console doctrine:database:drop --force
+
+// MAJ
+
+1 : modifier dans composer.json symfony "6.0.*" par "6.1.*"
+2 : commande : composer update "symfony/*" --with-all-dependencies  (tout ce qui commence par symfony, et maj des dependance)
+3 : composer update (eventuellement, si probleme)
+
+- - -
+
+à faire :
+
+1 : vérifier les dates version php 8 sans les types et default dans les entités

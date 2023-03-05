@@ -1,0 +1,53 @@
+header
+{
+    width: 100%;
+    background-color: var(--background_color_header);
+}
+
+header nav
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+header nav h1
+{
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #fff;
+
+    margin-right: 10px;
+}
+
+header nav h1 a
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+header nav ul
+{
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li
+{
+    padding: 10px 0;
+    margin-right: 10px;
+}
+
+header nav ul li a
+{
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+
+header nav ul li a:hover
+{
+    color: #fff;
+}
