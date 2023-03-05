@@ -9,15 +9,15 @@ header nav
     align-items: center;
     justify-content: space-between;
 
-    padding: 20px 20px;
+    padding: 20px;
 }
 
-header nav h1
+header nav ul h1
 {
     margin-right: 10px;
 }
 
-header nav h1 a
+header nav ul h1 a
 {
     color: var(--color-white);
 }
@@ -33,12 +33,16 @@ header nav ul li
     margin-right: 10px;
 }
 
+header nav ul li:last-of-type
+{
+    margin-right: 0;
+}
+
 header nav ul li a
 {
-    text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
-    color: #aaaaaa;
+    color: var(--color-header-link);
 }
 
 header nav ul li a:hover
