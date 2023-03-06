@@ -88,3 +88,8 @@ supprimer la base de données.
 3 : composer update (eventuellement, si probleme)
 
 - - -
+
+https://github.com/KnpLabs/KnpPaginatorBundle
+
+composer require knplabs/knp-paginator-bundle
+

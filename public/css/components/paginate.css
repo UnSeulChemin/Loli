@@ -1,0 +1,23 @@
+.navigation
+{
+    padding: 20px 0;
+}
+
+.navigation nav ul
+{
+    display: flex;
+}
+
+.navigation nav ul a
+{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #aaaaaa;
+    background-color: var(--background-color-header);
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-right: 10px;
+}

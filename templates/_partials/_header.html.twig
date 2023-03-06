@@ -1,15 +1,15 @@
 <header>
     <nav>
         <ul>
-            <h1><a href="{{ path('app_main') }}">LoliSSR</a></h1>
-            <li><a href="{{ path('app_main') }}">Upload</a></li>
+            <h1><a href="{{ path('app_main_index') }}">LoliSSR</a></h1>
+            <li><a href="{{ path('app_main_index') }}">Upload</a></li>
             {% if app.user %}
-               <li><a href="{{ path('app_main') }}">Users</a></li>
+               <li><a href="{{ path('app_main_index') }}">Users</a></li>
             {% endif %}
         </ul>
         <ul>
             {% if app.user %}
-                <li><a href="{{ path('app_main') }}">{{ app.user.name }}</a></li>
+                <li><a href="{{ path('app_main_index') }}">{{ app.user.name }}</a></li>
                 <li><a href="{{ path('app_logout') }}">Logout</a></li>
             {% else %}
                 <li><a href="{{ path('app_register') }}">Register</a></li>
