@@ -5,5 +5,49 @@ main
 
 main section
 {
-    padding: 30px 0;
+    padding: 30px 0 10px 0;
+}
+
+main #row-images
+{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+}
+
+main #row-images #show-images img
+{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+}
+
+main #row-images #show-images
+{
+    background-color: var(--background-color-header);
+    color: var(--color-header-link);
+    border: 2px solid #000;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+main #row-images #show-images p
+{
+    padding: 10px 20px;
+
+    border-bottom: 2px solid #000;
+}
+
+main #row-images #show-images p:first-of-type
+{
+    border-top: 2px solid #000;
+    color: #fff;
+}
+
+main #row-images #show-images p:last-of-type
+{
+    border-bottom: none;
 }

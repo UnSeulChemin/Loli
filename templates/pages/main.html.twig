@@ -8,11 +8,27 @@
     <p>Currently on page 1.</p>
 </section>
 
-    <div>
-        {% for images in image %}
+{% set compteur = 0 %}
+
+{% for images in image %}
+
+    {% if compteur == 0 %}
+        <div id="row-images">
+    {% endif %}
+
+        <div id="show-images">
             <img src="{{ asset('images/loli/' ~ images.name)}}" alt="{{ images.name }}">
-            <p>{{ images.type }}</p>
-            <p>{{ images.gender }}</p>
-        {% endfor %}
-    </div>
+            <p>{{ images.getCreatedAt()|date('d-m-Y') }}</p>
+            <p>List Type :{{ images.type }}</p>
+            <p>Gender :{{ images.gender }}</p>
+        </div>
+
+        {% set compteur = compteur + 1 %}
+
+            {% if compteur == 4 %}
+            </div>
+            {% endif %}
+
+{% endfor %}
+
 {% endblock %}
