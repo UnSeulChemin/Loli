@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block body %}
 <form method="post">
 
     <h2>Login here</h2>
+
+    {% if error %}
+        <div class="error-message">Email or password not valid</div>
+    {% endif %}
 
     <div>
         <label for="inputEmail">Email</label>
@@ -25,15 +29,6 @@
     <a href="{{ path('app_register') }}">Register</a>
 
     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
