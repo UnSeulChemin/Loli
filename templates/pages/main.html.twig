@@ -9,6 +9,10 @@
 </section>
 
     <div>
-        <p>Ici on affiche les images</p>
+        {% for images in image %}
+            <img src="{{ asset('images/loli/' ~ images.name)}}" alt="{{ images.name }}">
+            <p>{{ images.type }}</p>
+            <p>{{ images.gender }}</p>
+        {% endfor %}
     </div>
 {% endblock %}

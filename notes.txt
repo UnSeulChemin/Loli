@@ -88,7 +88,3 @@ supprimer la base de données.
 3 : composer update (eventuellement, si probleme)
 
 - - -
-
-à faire :
-
-1 : vérifier les dates version php 8 sans les types et default dans les entités
