@@ -15,12 +15,30 @@ h1
     color: var(--color-white);
 }
 
+h2
+{
+    font-size: 1.4em;
+    font-weight: bold;
+
+    padding-bottom: 20px;
+}
+
 p
 {
     font-size: 1.2em;
+
+    padding-bottom: 10px;
 }
 
 a
 {
     text-decoration: none;
+    font-size: 1.1em;
+}
+
+button
+{
+    font-size: 1.1em;
+
+    border: none;
 }
