@@ -27,7 +27,7 @@ main #row-images #show-images
 {
     background-color: var(--background-color-header);
     color: var(--color-header-link);
-    border: 2px solid #000;
+    border: 2px solid var(--color-black);
     font-weight: bold;
     border-radius: 5px;
     margin: 10px;
@@ -38,12 +38,12 @@ main #row-images #show-images p
 {
     padding: 10px 20px;
 
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid var(--color-black);
 }
 
 main #row-images #show-images p:first-of-type
 {
-    border-top: 2px solid #000;
+    border-top: 2px solid var(--color-black);
     color: #fff;
 }
 

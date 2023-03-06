@@ -9,6 +9,7 @@
 </section>
 
 {% set compteur = 0 %}
+{% set compteurImage = 0 %}
 
 {% for images in image %}
 
@@ -24,9 +25,11 @@
         </div>
 
         {% set compteur = compteur + 1 %}
+        {% set compteurImage = compteurImage + 1 %}
 
-            {% if compteur == 4 %}
-            </div>
+            {% if compteur % 4 == 0 %}
+                {% set compteur = 0 %}
+                </div>
             {% endif %}
 
 {% endfor %}
