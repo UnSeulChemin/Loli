@@ -1,0 +1,23 @@
+.success-flash
+{
+    width: 50%;
+    background-color: green;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.message-space
+{
+    margin-bottom: 20px;
+}
+
+.message-space input
+{
+    margin-bottom: 0;
+}
+/**/
+
+#contact div button
+{
+    margin-bottom: 0;
+}
