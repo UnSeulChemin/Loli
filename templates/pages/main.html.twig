@@ -20,7 +20,7 @@
     {% endif %}
 
         <div id="show-images">
-            <img src="{{ asset('images/loli/' ~ image.name)}}" alt="{{ image.name }}">
+            <img src="{{ asset('assets/images/loli/' ~ image.name)}}" alt="{{ image.name }}">
             <p>{{ image.createdAt|date('d-m-Y') }}</p>
             <p>List Type :{{ image.type }}</p>
             <p>Gender :{{ image.gender }}</p>
@@ -39,7 +39,7 @@
 {% endfor %}
 
         <div class="navigation">
-        {{ knp_pagination_render(images, 'paginate/link.html.twig') }}
+        {{ knp_pagination_render(images, 'pages/paginate/link.html.twig') }}
         </div>
 
 {% endblock %}

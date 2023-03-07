@@ -66,6 +66,7 @@ form div input
 form button
 {
     cursor: pointer;
+    font-weight: bold;
     background-color: var(--background-color-header);
     color: var(--color-header-link);
     width: 180px;
@@ -86,6 +87,7 @@ form a
 {
     background-color: var(--background-color-header);
     color: var(--color-header-link);
+    font-weight: bold;
     width: 180px;
 
     padding: 5px 0;
