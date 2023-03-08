@@ -39,7 +39,7 @@ class ContactFormType extends AbstractType
             ->add('message', TextType::class, options:[
                 'attr' => [
                     'minlength' => '3',
-                    'maxlength' => '500'
+                    'maxlength' => '200'
                 ],
                 'label' => 'Message'
             ])
