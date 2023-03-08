@@ -24,14 +24,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 100, unique: true)]
-    #[Assert\NotBlank(message: 'The field can\'t be empty')]
-    #[Assert\Length(min: 5, max: 30, minMessage: 'at least {{ limit }} characters', maxMessage: 'no more than {{ limit }} characters')]
-    #[Assert\Email(message: 'The email {{ value }} is not a valid email.')]
+    #[Assert\NotBlank(message: 'Email field can\'t be empty.')]
+    #[Assert\Length(min: 5, max: 30,
+        minMessage: 'Email shoud have at least {{ limit }} characters.',
+        maxMessage: 'Email shoud have no more than {{ limit }} characters.')]
+    #[Assert\Email(message: 'Email {{ value }} is not a valid email.')]
     private ?string $email = null;
 
     #[ORM\Column(length: 100)]
-    #[Assert\NotBlank(message: 'The field can\'t be empty')]
-    #[Assert\Length(min: 3, max: 10, minMessage: 'at least {{ limit }} characters', maxMessage: 'no more than {{ limit }} characters')]
+    #[Assert\NotBlank(message: 'Name field can\'t be empty.')]
+    #[Assert\Length(min: 3, max: 10,
+        minMessage: 'Name shoud have at least {{ limit }} characters.',
+        maxMessage: 'Name shoud have no more than {{ limit }} characters.')]
     private ?string $name = null;
 
     /**

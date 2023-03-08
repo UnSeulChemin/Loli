@@ -53,13 +53,13 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'The field can\'t be empty',
+                        'message' => 'Password field can\'t be empty.',
                     ]),
                     new Length([
                         'min' => 5,
                         'max'=> 30,
-                        'minMessage' => 'at least {{ limit }} characters',
-                        'maxMessage' => 'no more than {{ limit }} characters'
+                        'minMessage' => 'Password shoud have at least {{ limit }} characters.',
+                        'maxMessage' => 'Password shoud have no more than {{ limit }} characters.'
                     ]),
                 ],
             ])

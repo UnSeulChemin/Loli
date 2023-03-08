@@ -10,41 +10,47 @@
 
     {% for message in app.flashes('success') %}
         <div class="success-flash">
-            {{ message }}
+            <p>{{ message }}</p>
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('warning') %}
+        <div class="warning-flash">
+            <p>{{ message }}</p>
+            {{ form_errors(form.email) }}
+            {{ form_errors(form.name) }}
+            {{ form_errors(form.subject) }}
+            {{ form_errors(form.message) }}
         </div>
     {% endfor %}
 
     {{ form_start(form) }}
 
-        <div>
+        {# <div>
             {{ form_errors(form) }}
-        </div>
+        </div> #}
 
         <div>
             {{ form_label(form.email) }}
             {{ form_widget(form.email) }}
-            {{ form_errors(form.email) }}
         </div>
 
         <div>
             {{ form_label(form.name) }}
             {{ form_widget(form.name) }}
-            {{ form_errors(form.name) }}
         </div>
 
         <div>
             {{ form_label(form.subject) }}
             {{ form_widget(form.subject) }}
-            {{ form_errors(form.subject) }}
         </div>
 
         <div class="message-space">
             {{ form_label(form.message) }}
             {{ form_widget(form.message) }}
-            {{ form_errors(form.message) }}
         </div>
 
-            {{ form_row(form.submit) }}
+        {{ form_row(form.submit) }}
 
     {{ form_end(form) }}
 

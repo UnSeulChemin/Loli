@@ -1,9 +1,38 @@
 .success-flash
 {
+    background-color: var(--background-color-success-flash);
+    font-weight: bold;
     width: 50%;
-    background-color: green;
-    padding: 20px 0;
+
     margin-bottom: 20px;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.success-flash p
+{
+    padding-bottom: 0;
+}
+
+.warning-flash
+{
+    background-color: var(--background-color-warning-flash);
+    font-weight: bold;
+    width: 50%;
+
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.warning-flash p
+{
+    padding-bottom: 0;
+}
+
+.warning-flash ul li
+{
+    padding-top: 20px;
 }
 
 .message-space
