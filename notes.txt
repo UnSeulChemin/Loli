@@ -81,6 +81,12 @@ exécuter la migration.
 supprimer la base de données.
 = symfony console doctrine:database:drop --force
 
+// PAGINATION
+
+https://github.com/KnpLabs/KnpPaginatorBundle
+= composer require knplabs/knp-paginator-bundle
+
+
 // MAJ
 
 1 : modifier dans composer.json symfony "6.0.*" par "6.1.*"
@@ -88,8 +94,3 @@ supprimer la base de données.
 3 : composer update (eventuellement, si probleme)
 
 - - -
-
-https://github.com/KnpLabs/KnpPaginatorBundle
-
-composer require knplabs/knp-paginator-bundle
-
