@@ -6,6 +6,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Trait\CreatedAtTrait;
 use App\Repository\ContactRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
@@ -18,15 +19,24 @@ class Contact
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: 'The field can\'t be empty')]
+    #[Assert\Length(min: 3, max: 10, minMessage: 'at least {{ limit }} characters', maxMessage: 'no more than {{ limit }} characters')]
     private ?string $name = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: 'The field can\'t be empty')]
+    #[Assert\Length(min: 5, max: 30, minMessage: 'at least {{ limit }} characters', maxMessage: 'no more than {{ limit }} characters')]
+    #[Assert\Email(message: 'The email {{ value }} is not a valid email.')]
     private ?string $email = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: 'The field can\'t be empty')]
+    #[Assert\Length(min: 3, max: 30, minMessage: 'at least {{ limit }} characters', maxMessage: 'no more than {{ limit }} characters')]
     private ?string $subject = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message: 'The field can\'t be empty')]
+    #[Assert\Length(min: 3, max: 200, minMessage: 'at least {{ limit }} characters', maxMessage: 'no more than {{ limit }} characters')]
     private ?string $message = null;
 
     public function __construct()

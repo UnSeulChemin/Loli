@@ -25,6 +25,11 @@ pour créer une entité.
 modifier une entité.
 = symfony console make:entity 'entity exist name'
 
+// ENTITY CONSTRAINTS
+
+use Symfony\Component\Validator\Constraints as Assert;
+= puis on ajoute les contraintes dans l'entité.
+
 // MAKER SPECIAL
 
 créer la table user de cette façon.

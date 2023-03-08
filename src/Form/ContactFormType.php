@@ -9,58 +9,41 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Validator\Constraints as Assert;
 
 class ContactFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class, [
+            ->add('name', TextType::class, options:[
                 'attr' => [
                     'minlength' => '2',
-                    'maxlength' => '50'
+                    'maxlength' => '10'
                 ],
-                'label' => 'Name',
-                'constraints' => [
-                    new Assert\Length(['min' => 2, 'max' => 50]),
-                    new Assert\NotBlank()
-                ]
+                'label' => 'Name'
             ])
-            ->add('email', EmailType::class, [
+            ->add('email', EmailType::class, options:[
                 'attr' => [
-                    'minlength' => '2',
-                    'maxlength' => '50'
+                    'minlength' => '5',
+                    'maxlength' => '30'
                 ],
-                'label' => 'Email',
-                'constraints' => [
-                    new Assert\Length(['min' => 2, 'max' => 50]),
-                    new Assert\NotBlank()
-                ]
+                'label' => 'Email'
             ])
-            ->add('subject', TextType::class, [
+            ->add('subject', TextType::class, options:[
                 'attr' => [
-                    'minlength' => '2',
-                    'maxlength' => '50'
+                    'minlength' => '3',
+                    'maxlength' => '30'
                 ],
-                'label' => 'Subject',
-                'constraints' => [
-                    new Assert\Length(['min' => 2, 'max' => 50]),
-                    new Assert\NotBlank()
-                ]
+                'label' => 'Subject'
             ])
-            ->add('message', TextType::class, [
+            ->add('message', TextType::class, options:[
                 'attr' => [
-                    'minlength' => '2',
-                    'maxlength' => '200'
+                    'minlength' => '3',
+                    'maxlength' => '500'
                 ],
-                'label' => 'Message',
-                'constraints' => [
-                    new Assert\Length(['min' => 2, 'max' => 50]),
-                    new Assert\NotBlank()
-                ]
+                'label' => 'Message'
             ])
-            ->add('submit', SubmitType::class, [
+            ->add('submit', SubmitType::class, options:[
                 'label' => 'Submit',
             ])
         ;
