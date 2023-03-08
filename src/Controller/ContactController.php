@@ -38,14 +38,11 @@ class ContactController extends AbstractController
            $manager->persist($contact);
            $manager->flush();
 
-           $this->addFlash('success', 'Your message have be succefully sent !');
-
+           $this->addFlash('success', 'Your message have been successfully sent !');
            return $this->redirectToRoute('app_contact_create');
        }
 
-       return $this->render('pages/contact/contact_create.html.twig', [
-           'form' => $form,
-       ]);
+       return $this->render('pages/contact/contact_create.html.twig', compact('form'));
     }
 
     /**
