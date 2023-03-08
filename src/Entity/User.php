@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use App\Entity\Trait\CreatedAtTrait;
+
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
@@ -21,14 +23,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 180, unique: true)]
+    #[ORM\Column(length: 100, unique: true)]
+    #[Assert\NotBlank(message: 'The field can\'t be empty')]
+    #[Assert\Length(min: 5, max: 30, minMessage: 'at least {{ limit }} characters', maxMessage: 'no more than {{ limit }} characters')]
+    #[Assert\Email(message: 'The email {{ value }} is not a valid email.')]
     private ?string $email = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank(message: 'The field can\'t be empty')]
+    #[Assert\Length(min: 3, max: 10, minMessage: 'at least {{ limit }} characters', maxMessage: 'no more than {{ limit }} characters')]
     private ?string $name = null;
 
     /**
      * @var string The hashed password
+     * Constraints IN RegistrationFormType
      */
     #[ORM\Column]
     private ?string $password = null;

@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Contact;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,19 +16,19 @@ class ContactFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class, options:[
-                'attr' => [
-                    'minlength' => '2',
-                    'maxlength' => '10'
-                ],
-                'label' => 'Name'
-            ])
             ->add('email', EmailType::class, options:[
                 'attr' => [
                     'minlength' => '5',
                     'maxlength' => '30'
                 ],
                 'label' => 'Email'
+            ])
+            ->add('name', TextType::class, options:[
+                'attr' => [
+                    'minlength' => '3',
+                    'maxlength' => '10'
+                ],
+                'label' => 'Name'
             ])
             ->add('subject', TextType::class, options:[
                 'attr' => [
