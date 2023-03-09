@@ -60,7 +60,7 @@ class RegistrationController extends AbstractController
             $this->addFlash('warning', 'Complete the following step and try again.');
         }
 
-        return $this->render('pages/register.html.twig', [
+        return $this->render('pages/security/register.html.twig', [
             'registrationForm' => $form->createView(),
         ]);
     }
