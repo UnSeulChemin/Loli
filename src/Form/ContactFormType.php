@@ -54,6 +54,7 @@ class ContactFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Contact::class,
+            'attr' => ['id' => 'contact']
         ]);
     }
 }

@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<form id="contact" method="post">
+{{ form_start(form) }}
 
     <h2>Send a message here</h2>
 
@@ -24,36 +24,28 @@
         </div>
     {% endfor %}
 
-    {{ form_start(form) }}
+    <div>
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
 
-        {# <div>
-            {{ form_errors(form) }}
-        </div> #}
+    <div>
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
 
-        <div>
-            {{ form_label(form.email) }}
-            {{ form_widget(form.email) }}
-        </div>
+    <div>
+        {{ form_label(form.subject) }}
+        {{ form_widget(form.subject) }}
+    </div>
 
-        <div>
-            {{ form_label(form.name) }}
-            {{ form_widget(form.name) }}
-        </div>
+    <div class="message-space">
+        {{ form_label(form.message) }}
+        {{ form_widget(form.message) }}
+    </div>
 
-        <div>
-            {{ form_label(form.subject) }}
-            {{ form_widget(form.subject) }}
-        </div>
+    {{ form_row(form.submit) }}
 
-        <div class="message-space">
-            {{ form_label(form.message) }}
-            {{ form_widget(form.message) }}
-        </div>
-
-        {{ form_row(form.submit) }}
-
-    {{ form_end(form) }}
-
-</form>
+{{ form_end(form) }}
 
 {% endblock %}

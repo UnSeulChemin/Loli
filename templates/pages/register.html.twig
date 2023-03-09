@@ -3,24 +3,47 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+
 {{ form_start(registrationForm) }}
 
     <h2>Register here</h2>
 
-    {{ form_row(registrationForm.email) }}
-    {{ form_row(registrationForm.name) }}
-    {{ form_row(registrationForm.plainPassword, {
-        label: 'Password'
-    }) }}
+    {% for message in app.flashes('warning') %}
+        <div class="warning-flash">
+            <p>{{ message }}</p>
+            {{ form_errors(registrationForm.email) }}
+            {{ form_errors(registrationForm.name) }}
+            {{ form_errors(registrationForm.plainPassword) }}
+            {{ form_errors(registrationForm.agreeTerms) }}
+        </div>
+    {% endfor %}
+
+    <div>
+        {{ form_label(registrationForm.email) }}
+        {{ form_widget(registrationForm.email) }}
+    </div>
+
+    <div>
+        {{ form_label(registrationForm.name) }}
+        {{ form_widget(registrationForm.name) }}
+    </div>
+
+    <div>
+        {{ form_label(registrationForm.plainPassword) }}
+        {{ form_widget(registrationForm.plainPassword) }}
+    </div>
+
     <span class="chexbox-space">
-        {{ form_row(registrationForm.agreeTerms) }}
+        {{ form_label(registrationForm.agreeTerms) }}
+        {{ form_widget(registrationForm.agreeTerms) }}
     </span>
 
-    <button type="submit">Register</button>
+    {{ form_row(registrationForm.submit) }}
 
     <h2>If you already have an account</h2>
 
     <a href="{{ path('app_login') }}">Login</a>
 
 {{ form_end(registrationForm) }}
+
 {% endblock %}
