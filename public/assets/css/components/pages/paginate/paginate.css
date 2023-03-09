@@ -6,6 +6,7 @@
 .navigation nav ul
 {
     display: flex;
+    align-items: center;
 }
 
 .navigation nav ul a
@@ -20,4 +21,9 @@
     border-radius: 10px;
     padding: 5px 10px;
     margin-right: 10px;
+}
+
+.navigation nav ul a:hover
+{
+    color: var(--color-white);
 }
