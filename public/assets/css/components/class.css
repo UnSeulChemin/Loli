@@ -1,0 +1,69 @@
+/* Flash */
+.success-flash
+{
+    background-color: var(--background-color-success-flash);
+    width: 50%;
+
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.warning-flash
+{
+    background-color: var(--background-color-warning-flash);
+    width: 50%;
+
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.message-flash
+{
+    font-weight: bold;
+
+    padding-bottom: 0;
+}
+
+.warning-flash ul li
+{
+    font-size: 1.1em;
+
+    padding-top: 20px;
+}
+/**/
+
+/* Form */
+.form-last-div-space
+{
+    margin-bottom: 20px;
+}
+
+.form-last-div-space input
+{
+    margin-bottom: 0;
+}
+
+.font-last-div-chexbox-space
+{
+    margin-bottom: 20px;
+}
+
+.font-last-div-chexbox-space
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.font-last-div-chexbox-space label
+{
+    margin-right: 10px;
+    padding-bottom: 0;
+}
+
+.font-last-div-chexbox-space input
+{
+    margin: 0;
+}
+/**/

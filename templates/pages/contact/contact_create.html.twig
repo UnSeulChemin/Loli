@@ -10,13 +10,13 @@
 
     {% for message in app.flashes('success') %}
         <div class="success-flash">
-            <p>{{ message }}</p>
+            <p class="message-flash">{{ message }}</p>
         </div>
     {% endfor %}
 
     {% for message in app.flashes('warning') %}
         <div class="warning-flash">
-            <p>{{ message }}</p>
+            <p class="message-flash">{{ message }}</p>
             {{ form_errors(form.email) }}
             {{ form_errors(form.name) }}
             {{ form_errors(form.subject) }}
@@ -39,7 +39,7 @@
         {{ form_widget(form.subject) }}
     </div>
 
-    <div class="message-space">
+    <div class="form-last-div-space">
         {{ form_label(form.message) }}
         {{ form_widget(form.message) }}
     </div>

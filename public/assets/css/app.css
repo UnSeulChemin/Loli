@@ -1,7 +1,9 @@
 @import 'components/variables.css';
+@import 'components/class.css';
 @import 'components/global.css';
 @import 'components/_partials/header.css';
 @import 'components/pages/main.css';
 @import 'components/pages/paginate/paginate.css';
 @import 'components/pages/contact/contact.css';
 @import 'components/pages/security/register.css';
+@import 'components/pages/security/login.css';

@@ -1,4 +1,4 @@
-#register a
+#login a
 {
     width: 180px;
 
@@ -7,7 +7,7 @@
     border-radius: 5px;
 }
 
-#register a:hover
+#login a:hover
 {
     color: var(--color-white);
     opacity: 0.9;

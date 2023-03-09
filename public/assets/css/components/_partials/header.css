@@ -12,6 +12,12 @@ header nav
     padding: 20px;
 }
 
+header nav ul
+{
+    display: flex;
+    align-items: center;
+}
+
 header nav ul h1
 {
     margin-right: 10px;
@@ -19,14 +25,8 @@ header nav ul h1
 
 header nav ul h1 a
 {
-    font-size: 1.1em;
+    font-size: 1.4em;
     color: var(--color-white);
-}
-
-header nav ul
-{
-    display: flex;
-    align-items: center;
 }
 
 header nav ul li
@@ -37,14 +37,4 @@ header nav ul li
 header nav ul li:last-of-type
 {
     margin-right: 0;
-}
-
-header nav ul li a
-{
-    color: var(--color-header-link);
-}
-
-header nav ul li a:hover
-{
-    color: var(--color-white);
 }

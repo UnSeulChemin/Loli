@@ -8,13 +8,6 @@ body
     padding: 0;
 }
 
-h1
-{
-    font-size: 1.3em;
-    font-weight: bold;
-    color: var(--color-white);
-}
-
 h2
 {
     font-size: 1.3em;
@@ -35,6 +28,13 @@ a
     font-size: 1.2em;
     font-weight: bold;
     text-decoration: none;
+    color: var(--color-header-link);
+    background-color: var(--background-color-header);
+}
+
+a:hover
+{
+    color: var(--color-white);
 }
 
 button
@@ -42,6 +42,50 @@ button
     font-size: 1.1em;
     font-weight: bold;
     cursor: pointer;
+    width: 180px;
 
+    background-color: var(--background-color-header);
+    color: var(--color-header-link);
+
+    margin-bottom: 20px;
+    padding: 5px 0;
     border: none;
+    border-radius: 5px;
+}
+
+button:hover
+{
+    color: var(--color-white);
+    opacity: 0.9;
+}
+
+form
+{
+    text-align: center;
+    background-color: var(--background-color-register);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 30px;
+    padding: 30px 0;
+    border: 2px solid var(--color-black);
+    border-radius: 5px;
+}
+
+form div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+form div label
+{
+    padding-bottom: 10px;
+}
+
+form div input
+{
+    margin-bottom: 10px;
 }
