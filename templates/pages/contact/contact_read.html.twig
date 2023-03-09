@@ -1,14 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact{% endblock %}
+{% block title %}Contact Read{% endblock %}
 
 {% block body %}
 
+<article>
+
+    <h2>All contact here</h2>
+
     {% for contact in contacts %}
-        <p>{{ contact.name }}</p>
-        <p>{{ contact.email }}</p>
-        <p>{{ contact.subject }}</p>
-        <p>{{ contact.message }}</p>
+        <div>
+            <p>{{ contact.name }}</p>
+            <p>{{ contact.email }}</p>
+            <p>{{ contact.subject }}</p>
+            <p>{{ contact.message }}</p>
+            <p>{{ contact.createdAt|date('d-m-Y') }}</p>
+        </div>
     {% endfor %}
+
+</article>
 
 {% endblock %}

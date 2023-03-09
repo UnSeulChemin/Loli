@@ -3,6 +3,7 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+
 <section>
     <p>LoliSSR find your favorite waifu !</p>
     <p>Currently on page 1.</p>
@@ -38,8 +39,8 @@
 
 {% endfor %}
 
-        <div class="navigation">
-        {{ knp_pagination_render(images, 'pages/paginate/link.html.twig') }}
-        </div>
+<div class="navigation">
+    {{ knp_pagination_render(images, 'pages/paginate/link.html.twig') }}
+</div>
 
 {% endblock %}
