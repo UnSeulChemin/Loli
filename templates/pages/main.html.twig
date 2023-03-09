@@ -16,15 +16,15 @@
 
     {% if compteur == 0 %}
 
-    <div id="row-images">
+    <div class="row-images">
 
     {% endif %}
 
-        <div id="show-images">
+        <div class="show-images">
             <img src="{{ asset('assets/images/loli/' ~ image.name)}}" alt="{{ image.name }}">
             <p>{{ image.createdAt|date('d/m/Y') }}</p>
-            <p>List Type : {{ image.type }}</p>
-            <p>Gender : {{ image.gender }}</p>
+            <a href="#">List Type : {{ image.type }}</a>
+            <a href="#">Gender : {{ image.gender }}</a>
         </div>
 
     {% set compteur = compteur + 1 %}

@@ -11,8 +11,6 @@
 
 #navigation nav ul li a
 {
-    display: inline-block;
-
     margin-right: 10px;
     padding: 5px 10px;
     border: 2px solid #000;
