@@ -12,15 +12,13 @@
 .navigation nav ul a
 {
     display: inline-block;
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
     color: #aaaaaa;
     background-color: var(--background-color-header);
+
+    margin-right: 10px;
+    padding: 5px 10px;
     border: 2px solid #000;
     border-radius: 10px;
-    padding: 5px 10px;
-    margin-right: 10px;
 }
 
 .navigation nav ul a:hover

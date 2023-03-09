@@ -66,15 +66,12 @@ form div input
 
 form button
 {
-    cursor: pointer;
-    font-weight: bold;
     background-color: var(--background-color-header);
     color: var(--color-header-link);
     width: 180px;
     
     margin-bottom: 20px;
     padding: 5px 0;
-    border: none;
     border-radius: 5px;
 }
 

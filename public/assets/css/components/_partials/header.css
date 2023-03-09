@@ -19,6 +19,7 @@ header nav ul h1
 
 header nav ul h1 a
 {
+    font-size: 1.1em;
     color: var(--color-white);
 }
 
@@ -40,8 +41,6 @@ header nav ul li:last-of-type
 
 header nav ul li a
 {
-    font-size: 1.2em;
-    font-weight: bold;
     color: var(--color-header-link);
 }
 
