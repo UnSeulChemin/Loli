@@ -4,21 +4,22 @@
     margin-bottom: 20px;
 }
 
-.chexbox-space div
+.chexbox-space
 {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
-.chexbox-space div label
+.chexbox-space label
 {
     margin-right: 5px;
     padding-bottom: 0;
 }
 
-.chexbox-space div input
+.chexbox-space input
 {
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .password-space
@@ -26,7 +27,7 @@
     margin-bottom: 20px;
 }
 
-.password-space div input
+.password-space input
 {
     margin-bottom: 0;
 }

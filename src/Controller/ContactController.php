@@ -35,11 +35,11 @@ class ContactController extends AbstractController
         {
             $contact = $form->getData();
 
-           $manager->persist($contact);
-           $manager->flush();
+            $manager->persist($contact);
+            $manager->flush();
 
-           $this->addFlash('success', 'Your message have been successfully sent !');
-           return $this->redirectToRoute('app_contact_create');
+            $this->addFlash('success', 'Your message have been successfully sent !');
+            return $this->redirectToRoute('app_contact_create');
         }
 
         else if ($form->isSubmitted() && !$form->isValid())

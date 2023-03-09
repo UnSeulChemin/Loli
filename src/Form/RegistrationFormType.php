@@ -24,7 +24,8 @@ class RegistrationFormType extends AbstractType
             ->add('email', EmailType::class, options:[
                 'attr' => [
                     'minlength' => '5',
-                    'maxlength' => '30'
+                    'maxlength' => '30',
+                    'autofocus' => null
                 ],
                 'label' => 'Email'
             ])
