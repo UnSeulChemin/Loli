@@ -28,7 +28,7 @@ class MainController extends AbstractController
     public function main(ImageRepository $image, PaginatorInterface $paginator, Request $request): Response
     {
         $images = $paginator->paginate(
-            $image->findAll(),
+            $image->findBy([], ['id' => 'DESC']),
             $request->query->getInt('page', 1), /*page number*/ 8 /*limit per page*/
         );
 
@@ -47,7 +47,7 @@ class MainController extends AbstractController
     public function mainRead(ImageRepository $image, PaginatorInterface $paginator, Request $request): Response
     {
         $images = $paginator->paginate(
-            $image->findAll(),
+            $image->findBy([], ['id' => 'DESC']),
             $request->query->getInt('page', 1), /*page number*/ 8 /*limit per page*/
         );
 
