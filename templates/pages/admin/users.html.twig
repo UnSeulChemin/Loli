@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+<article>
+    <h2>All users</h2>
+
+    {% for user in users %}
+        <div class="padding-top">
+            {# <p><span class="bold">UserId :</span></p> #}
+            <p><span class="bold">Email :</span> {{ user.email }}</p>
+            <p><span class="bold">Name :</span> {{ user.name }}</p>
+            <p><span class="bold">Date :</span> {{ user.createdAt|date('d/m/Y') }}</p>
+        </div>
+    {% endfor %}
+    
+</article>
+
+{% endblock %}

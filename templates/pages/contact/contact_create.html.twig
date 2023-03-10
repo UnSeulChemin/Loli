@@ -44,12 +44,15 @@
         {{ form_widget(form.message) }}
     </div>
 
-    {{ form_row(form.submit) }}
+    <div>
+        {{ form_label(form.submit) }}
+        {{ form_widget(form.submit) }}
+    </div>
 
     {% if app.user %}
         {% if is_granted('ROLE_ADMIN') %}
             <h2 class="padding-top">Read all messages</h2>
-            <a href="{{ path('app_contact_read') }}">Read</a>
+            <a class="a-button" href="{{ path('app_contact_read') }}">Read</a>
         {% endif %}
     {% endif %} 
 

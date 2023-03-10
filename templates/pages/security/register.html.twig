@@ -10,7 +10,7 @@
 
     {% for message in app.flashes('warning') %}
         <div class="warning-flash">
-            <p>{{ message }}</p>
+            <p class="padding-bottom-none bold">{{ message }}</p>
             {{ form_errors(registrationForm.email) }}
             {{ form_errors(registrationForm.name) }}
             {{ form_errors(registrationForm.plainPassword) }}
@@ -38,11 +38,14 @@
         {{ form_widget(registrationForm.agreeTerms) }}
     </div>
 
-    {{ form_row(registrationForm.submit) }}
+    <div>
+        {{ form_label(registrationForm.submit) }}
+        {{ form_widget(registrationForm.submit) }}
+    </div>
 
     <h2>If you already have an account</h2>
 
-    <a href="{{ path('app_login') }}">Login</a>
+    <a class="a-button" href="{{ path('app_login') }}">Login</a>
 
 {{ form_end(registrationForm) }}
 

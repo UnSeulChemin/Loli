@@ -9,12 +9,13 @@
     <h2>All contact here</h2>
 
     {% for contact in contacts %}
-        <div>
-            <p>{{ contact.name }}</p>
-            <p>{{ contact.email }}</p>
-            <p>{{ contact.subject }}</p>
-            <p>{{ contact.message }}</p>
-            <p>{{ contact.createdAt|date('d-m-Y') }}</p>
+        <div class="padding-top">
+            {# <p><span class="bold">UserId :</span></p> #}
+            <p><span class="bold">Email :</span> {{ contact.email }}</p>
+            <p><span class="bold">Name :</span> {{ contact.name }}</p>
+            <p><span class="bold">Subject :</span> {{ contact.subject }}</p>
+            <p><span class="bold">Message :</span> {{ contact.message }}</p>
+            <p><span class="bold">Date :</span> {{ contact.createdAt|date('d/m/Y') }}</p>
         </div>
     {% endfor %}
 

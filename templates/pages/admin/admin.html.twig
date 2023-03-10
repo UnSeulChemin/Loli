@@ -3,7 +3,15 @@
 {% block title %}Admin{% endblock %}
 
 {% block body %}
-<form action="post">
-<h2>Page de profil SI CONNECTER ADMIN</h2>
-</form>
+<article>
+    <h2>Admin part</h2>
+
+    <nav>
+        <ul>
+            <li><a class="a-button" href="{{ path('app_admin_users') }}">Show users</a></li>
+        </ul>
+    </nav>
+    
+</article>
+
 {% endblock %}

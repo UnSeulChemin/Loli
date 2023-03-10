@@ -10,7 +10,7 @@
 
     {% if error %}
         <div class="warning-flash">
-            <p>Email or password not valid.</p>
+            <p class="padding-bottom-none">Email or password not valid.</p>
         </div>
     {% endif %}
 
@@ -24,11 +24,13 @@
         <input type="password" name="password" id="inputPassword" autocomplete="current-password" required="required">
     </div>
 
-    <button type="submit">Login</button>
+    <div>
+        <button type="submit">Login</button>
+    </div>
 
     <h2>Create your account</h2>
 
-    <a href="{{ path('app_register') }}">Register</a>
+    <a class="a-button" href="{{ path('app_register') }}">Register</a>
 
     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 

@@ -46,6 +46,9 @@ class ContactFormType extends AbstractType
                 'label' => 'Message'
             ])
             ->add('submit', SubmitType::class, options:[
+                'attr' => [
+                    'class' => 'margin-bottom-none'
+                ],
                 'label' => 'Submit',
             ])
         ;

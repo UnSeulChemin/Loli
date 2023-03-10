@@ -59,7 +59,7 @@ class ContactController extends AbstractController
     #[Route('/contact/read', name: 'app_contact_read', methods: ['GET'])]
     public function contactRead(ContactRepository $repository): Response
     {
-        $contacts = $repository->findAll();
+        $contacts = $repository->findBy([], ['id' => 'DESC']);
 
         return $this->render('pages/contact/contact_read.html.twig', compact('contacts'));
     }

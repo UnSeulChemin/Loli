@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ProfilController extends AbstractController
 {
-    #[Route('/user/profil', name: 'app_profil')]
+    #[Route('/profil', name: 'app_profil')]
     public function profil(): Response
     {
         return $this->render('pages/profil/profil.html.twig');
