@@ -50,7 +50,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'attr' => [
                     'autocomplete' => 'new-password',
-                    'minlength' => '3',
+                    'minlength' => '5',
                     'maxlength' => '10'
                 ],
                 'constraints' => [

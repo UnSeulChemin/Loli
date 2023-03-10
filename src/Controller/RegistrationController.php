@@ -15,6 +15,9 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+/**
+ * Page Register
+ */
 class RegistrationController extends AbstractController
 {
     /**

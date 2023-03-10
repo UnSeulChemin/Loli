@@ -4,24 +4,42 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserEditNameFormType;
-use App\Security\UserAuthenticator;
 use App\Form\UserEditPasswordFormType;
+use App\Security\UserAuthenticator;
+
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
+/**
+ * Page Profil
+ */
 class ProfilController extends AbstractController
 {
+    /**
+     * Page Profil
+     *
+     * @return Response
+     */
     #[Route('/profil', name: 'app_profil', methods: ['GET', 'POST'])]
     public function profil(): Response
     {
         return $this->render('pages/profil/profil.html.twig');
     }
 
+    /**
+     * Page Profil, Edit Name
+     *
+     * @param Request $request
+     * @param User $user
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */
     #[Route('/profil/edit/name/{id}', name: 'app_profil_edit_name', methods: ['GET', 'POST'])]
     public function profilEditName(Request $request, User $user, EntityManagerInterface $manager): Response
     {
@@ -41,6 +59,17 @@ class ProfilController extends AbstractController
         return $this->render('pages/profil/profil_edit_name.html.twig', compact('form'));
     }
 
+    /**
+     * Page Profil, Edit Password
+     *
+     * @param Request $request
+     * @param User $user
+     * @param EntityManagerInterface $manager
+     * @param UserPasswordHasherInterface $hasher
+     * @param UserAuthenticatorInterface $userAuthenticator
+     * @param UserAuthenticator $authenticator
+     * @return Response
+     */
     #[Route('/profil/edit/password/{id}', name: 'app_profil_edit_password', methods: ['GET', 'POST'])]
     public function profilEditPassword(Request $request, User $user, EntityManagerInterface $manager, UserPasswordHasherInterface $hasher, UserAuthenticatorInterface $userAuthenticator, UserAuthenticator $authenticator): Response
     {

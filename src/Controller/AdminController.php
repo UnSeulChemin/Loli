@@ -3,20 +3,35 @@
 namespace App\Controller;
 
 use App\Repository\UserRepository;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+/**
+ * Page Admin
+ */
 class AdminController extends AbstractController
 {
+    /**
+     * Page Admin
+     *
+     * @return Response
+     */
     #[Route('/admin', name: 'app_admin')]
     public function admin(): Response
     {
         return $this->render('pages/admin/admin.html.twig');
     }
 
+    /**
+     * Pagr Admin, Read Users
+     *
+     * @param UserRepository $repository
+     * @return Response
+     */
     #[Route('/admin/users', name: 'app_admin_users')]
-    public function showUsers(UserRepository $repository): Response
+    public function readUsers(UserRepository $repository): Response
     {
         $users = $repository->findBy([], ['id' => 'DESC']);
 
