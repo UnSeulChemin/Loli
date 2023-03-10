@@ -3,6 +3,8 @@
 # git add .
 # git commit -m ".gitignore est maintenant fonctionnel"
 
+/notes.txt
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
