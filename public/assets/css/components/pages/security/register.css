@@ -3,7 +3,7 @@
     width: 180px;
 
     padding: 5px 0;
-    border: 2px solid #333;
+    border: 2px solid var(--background-color-header);
     border-radius: 5px;
 }
 

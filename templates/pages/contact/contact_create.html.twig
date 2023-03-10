@@ -48,8 +48,8 @@
 
     {% if app.user %}
         {% if is_granted('ROLE_ADMIN') %}
-            <h2>Read All</h2>
-            <a href="#">Read</a>
+            <h2 class="padding-top">Read all messages</h2>
+            <a href="{{ path('app_contact_read') }}">Read</a>
         {% endif %}
     {% endif %} 
 
