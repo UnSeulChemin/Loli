@@ -99,6 +99,11 @@ form div input
     margin-bottom: 10px;
 }
 
+label
+{
+    font-size: 1.1em;
+}
+
 article
 {
     text-align: center;

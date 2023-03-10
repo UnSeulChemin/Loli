@@ -6,7 +6,12 @@
 <article>
     <h2>Settings profil</h2>
 
-    Changer de nom
-    Changer de mdp
+    <nav>
+        <ul>
+            <li><a class="a-button" href="{{ path('app_profil_edit_name', { 'id': app.user.id }) }}">Change name</a></li>
+            <li><a class="a-button" href="{{ path('app_profil_edit_password', { 'id': app.user.id }) }}">Change Password</a></li>
+        </ul>
+    </nav>
+
 </article>
 {% endblock %}

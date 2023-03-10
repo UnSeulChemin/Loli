@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit{% endblock %}
+
+{% block body %}
+
+{{ form_start(form) }}
+
+    <h2>Edit name</h2>
+
+    <p class="bold">Current name</p>
+    <p>{{ app.user.name }}</p>
+
+    <div>
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+
+    <div>
+        {{ form_label(form.submit) }}
+        {{ form_widget(form.submit) }}
+    </div>
+
+{{ form_end(form) }}
+
+{% endblock %}
