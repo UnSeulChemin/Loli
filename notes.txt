@@ -65,6 +65,21 @@ supprimer toutes les tables puis.
 = symfony console doctrine:schema:update --force (recréer la base de données en empty)
 = symfony console d:f:l --no-interaction (on recréer les fixtures)
 
+// ROLE
+
+security.yaml
+
+    access_control:
+    - { path: ^/admin, roles: ROLE_ADMIN }
+    - { path: ^/profil, roles: ROLE_USER }
+
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+
+twig
+
+{% if is_granted('ROLE_USER') %}
+
 // PAGE D'ERREURS
 
 installer twigpack.

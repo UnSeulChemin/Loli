@@ -46,6 +46,13 @@
 
     {{ form_row(form.submit) }}
 
+    {% if app.user %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <h2>Read All</h2>
+            <a href="#">Read</a>
+        {% endif %}
+    {% endif %} 
+
 {{ form_end(form) }}
 
 {% endblock %}
