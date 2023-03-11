@@ -13,7 +13,7 @@
     {% endfor %}
 
     {% for user in users %}
-        <div class="padding-top">
+        <div class="margin-bottom">
             <div>
                 <p><span class="bold">Email :</span> {{ user.email }}</p>
             </div>
@@ -22,9 +22,6 @@
             </div>
             <div>
                 <p><span class="bold">Date :</span> {{ user.createdAt|date('d/m/Y') }}</p>
-            </div>
-            <div>
-                <a class="a-button margin-bottom-min" href="{{ path('app_admin_users_delete', { id: user.id }) }}" class="btn btn-warning">Modifier</a>
             </div>
             <div>
                 <a class="a-button" href="{{ path('app_admin_users_delete', { id: user.id }) }}" class="btn btn-warning">Supprimer</a>

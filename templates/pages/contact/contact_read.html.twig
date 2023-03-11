@@ -15,7 +15,7 @@
     {% endfor %}   
 
     {% for contact in contacts %}
-        <div class="padding-top">
+        <div class="margin-bottom">
             {# <p><span class="bold">UserId :</span></p> #}
             <div>
                 <p><span class="bold">Email :</span> {{ contact.email }}</p>
@@ -31,10 +31,7 @@
             </div>
             <div>
                 <p><span class="bold">Date :</span> {{ contact.createdAt|date('d/m/Y') }}</p>
-            </div>
-            <div>
-                <a class="a-button margin-bottom-min" href="{{ path('app_contact_delete', { id: contact.id }) }}" class="btn btn-warning">Modifier</a>
-            </div>            
+            </div>    
             <div>
                 <a class="a-button" href="{{ path('app_contact_delete', { id: contact.id }) }}" class="btn btn-warning">Supprimer</a>
             </div>
