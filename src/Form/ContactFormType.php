@@ -49,7 +49,7 @@ class ContactFormType extends AbstractType
                 'attr' => [
                     'class' => 'margin-bottom-none'
                 ],
-                'label' => 'Submit',
+                'label' => 'Send',
             ])
         ;
     }

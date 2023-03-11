@@ -6,7 +6,7 @@
 
 {{ form_start(form) }}
 
-    <h2>Send a message here</h2>
+    <h2>Send message</h2>
 
     {% for message in app.flashes('success') %}
         <div class="success-flash">
@@ -52,7 +52,7 @@
     {% if app.user %}
         {% if is_granted('ROLE_ADMIN') %}
             <h2 class="padding-top">Read all messages</h2>
-            <a class="a-button" href="{{ path('app_contact_read') }}">Read</a>
+            <a class="a-button" href="{{ path('app_contact_read') }}">Show Contacts</a>
         {% endif %}
     {% endif %} 
 

@@ -127,3 +127,13 @@ article div:last-of-type
 {
     margin-bottom: 0;
 }
+
+article nav ul li
+{
+    margin-bottom: 20px;
+}
+
+article nav ul li:last-of-type
+{
+    margin-bottom: 0;
+}

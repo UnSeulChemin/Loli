@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Contact;
 use App\Form\ContactFormType;
-use App\Repository\ContactRepository;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -49,29 +48,4 @@ class ContactController extends AbstractController
 
        return $this->render('pages/contact/contact_create.html.twig', compact('form'));
     }
-
-    /**
-     * Page Contact, Read
-     *
-     * @param ContactRepository $repository
-     * @return Response
-     */
-    #[Route('/contact/read', name: 'app_contact_read', methods: ['GET'])]
-    public function contactRead(ContactRepository $repository): Response
-    {
-        $contacts = $repository->findBy([], ['id' => 'DESC']);
-
-        return $this->render('pages/contact/contact_read.html.twig', compact('contacts'));
-    }
-
-    #[Route('/contact/read/delete/{id}', name: 'app_contact_delete', methods: ['GET'])]
-    public function contactDelete(Contact $contact, EntityManagerInterface $manager): Response
-    {
-        $manager->remove($contact);
-        $manager->flush();
-
-        $this->addFlash('success', 'The contact have been successfully delete !');
-        return $this->redirectToRoute('app_contact_read');
-    }
-
 }
