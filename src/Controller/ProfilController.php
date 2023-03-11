@@ -59,7 +59,17 @@ class ProfilController extends AbstractController
         return $this->render('pages/profil/profil_name.html.twig', compact('form'));
     }
 
-
+    /**
+     * * Page Profil, Edit Password
+     *
+     * @param Request $request
+     * @param User $user
+     * @param UserAuthenticator $authenticator
+     * @param UserPasswordHasherInterface $hasher
+     * @param UserAuthenticatorInterface $userAuthenticator
+     * @param EntityManagerInterface $manager
+     * @return Response
+     */    
     #[Route('/profil/password/{id}', name: 'app_profil_password', methods: ['GET', 'POST'])]
     public function profilEditPassword(Request $request, User $user, UserAuthenticator $authenticator,
         UserPasswordHasherInterface $hasher, UserAuthenticatorInterface $userAuthenticator,
