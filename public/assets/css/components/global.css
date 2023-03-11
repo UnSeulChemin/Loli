@@ -1,3 +1,29 @@
+/* Scroll Bar */
+::-webkit-scrollbar
+{
+    width: 12px;
+}
+
+::-webkit-scrollbar-track
+{
+    background-color: var(--color-link);
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: var(--background-color-link);
+}
+
+@supports (scrollbar-color: var(--background-color-link) var(--color-link))
+{
+    *
+    {
+        scrollbar-color: var(--background-color-link) var(--color-link);
+        scrollbar-width: auto;
+    }
+}
+/**/
+
 body
 {
     font-family: var(--font-family);

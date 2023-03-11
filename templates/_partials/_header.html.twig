@@ -5,7 +5,7 @@
 
             {% if app.user %}
                 {% if is_granted('ROLE_USER') %}
-                    <li><a href="{{ path('app_contact_create') }}">Contact</a></li>
+                    <li><a href="{{ path('app_contact') }}">Contact</a></li>
                 {% endif %}
                 {% if is_granted('ROLE_ADMIN') %}
                     <li><a href="{{ path('app_admin') }}">Admin</a></li>

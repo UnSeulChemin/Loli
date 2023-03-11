@@ -23,8 +23,8 @@ class ContactController extends AbstractController
      * @param EntityManagerInterface $manager
      * @return Response
      */
-    #[Route('/contact', name: 'app_contact_create', methods: ['GET', 'POST'])]
-    public function contactCreate(Request $request, EntityManagerInterface $manager): Response
+    #[Route('/contact', name: 'app_contact', methods: ['GET', 'POST'])]
+    public function contact(Request $request, EntityManagerInterface $manager): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactFormType::class, $contact);
@@ -38,7 +38,7 @@ class ContactController extends AbstractController
             $manager->flush();
 
             $this->addFlash('success', 'Your message have been successfully sent !');
-            return $this->redirectToRoute('app_contact_create');
+            return $this->redirectToRoute('app_contact');
         }
 
         else if ($form->isSubmitted() && !$form->isValid())
@@ -46,6 +46,6 @@ class ContactController extends AbstractController
             $this->addFlash('warning', 'Complete the following step and try again.');
         }
 
-       return $this->render('pages/contact/contact_create.html.twig', compact('form'));
+       return $this->render('pages/contact/contact.html.twig', compact('form'));
     }
 }

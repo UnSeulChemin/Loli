@@ -17,15 +17,15 @@ use Knp\Component\Pager\PaginatorInterface;
 class MainController extends AbstractController
 {
     /**
-     * Page Main
+     * Page Main, Read Image
      *
+     * @param Request $request
      * @param ImageRepository $image
      * @param PaginatorInterface $paginator
-     * @param Request $request
      * @return Response
      */
     #[Route('/', name: 'index', methods: ['GET'])]
-    public function main(ImageRepository $image, PaginatorInterface $paginator, Request $request): Response
+    public function main(Request $request, ImageRepository $image, PaginatorInterface $paginator): Response
     {
         $images = $paginator->paginate(
             $image->findBy([], ['id' => 'DESC']),
@@ -36,15 +36,15 @@ class MainController extends AbstractController
     }
 
     /**
-     * Page Main, Paginate
+     * Page Main, Read Image / Paginate
      *
+     * @param Request $request
      * @param ImageRepository $image
      * @param PaginatorInterface $paginator
-     * @param Request $request
      * @return Response
      */
     #[Route('/loli/page/', name: 'loli', methods: ['GET'])]
-    public function mainRead(ImageRepository $image, PaginatorInterface $paginator, Request $request): Response
+    public function mainRead(Request $request, ImageRepository $image, PaginatorInterface $paginator): Response
     {
         $images = $paginator->paginate(
             $image->findBy([], ['id' => 'DESC']),
