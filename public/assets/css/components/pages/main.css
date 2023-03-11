@@ -3,7 +3,7 @@ main
     padding: 0 30px;
 }
 
-main section
+main #main-section
 {
     padding: 30px 0 10px 0;
 }
@@ -27,7 +27,7 @@ main .row-images .show-images
 main .row-images .show-images p
 {
     color: var(--color-white);
-    background-color: var(--background-color-header);
+    background-color: var(--background-color-link);
     font-weight: bold;
 
     padding: 10px 20px;

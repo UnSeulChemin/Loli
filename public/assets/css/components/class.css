@@ -1,4 +1,13 @@
+/* Summary : 
+Marge, Flash, Form, Other
+*/
+
 /* Marge */
+.margin-bottom-none
+{
+    margin-bottom: 0;
+}
+
 .padding-top
 {
     padding-top: 20px;
@@ -8,12 +17,6 @@
 {
     padding-bottom: 0;
 }
-
-.margin-bottom-none
-{
-    margin-bottom: 0;
-}
-
 /**/
 
 /* Flash */
@@ -86,12 +89,13 @@
 }
 /**/
 
+/* Other */
 .a-button
 {
     width: 180px;
 
     padding: 5px 0;
-    border: 2px solid var(--background-color-header);
+    border: 2px solid var(--background-color-link);
     border-radius: 5px;
 }
 
