@@ -3,9 +3,4 @@ article .padding-top:first-of-type
 {
     padding-top: 0;
 }
-
-article .padding-top p:last-of-type
-{
-    padding-bottom: 0;
-}
 /**/

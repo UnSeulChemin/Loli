@@ -3,6 +3,11 @@ Marge, Flash, Form, Other
 */
 
 /* Marge */
+.margin-bottom-min
+{
+    margin-bottom: 10px;
+}
+
 .margin-bottom-none
 {
     margin-bottom: 0;
