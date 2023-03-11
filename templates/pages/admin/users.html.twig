@@ -3,7 +3,9 @@
 {% block title %}Users{% endblock %}
 
 {% block body %}
+
 <article>
+
     <h2>All users</h2>
 
     {% for message in app.flashes('success') %}
@@ -24,7 +26,7 @@
                 <p><span class="bold">Date :</span> {{ user.createdAt|date('d/m/Y') }}</p>
             </div>
             <div>
-                <a class="a-button" href="{{ path('app_admin_users_delete', { id: user.id }) }}" class="btn btn-warning">Supprimer</a>
+                <a class="a-button" href="{{ path('app_admin_users_delete', { id: user.id }) }}">Supprimer</a>
             </div>
         </div>
     {% endfor %}
