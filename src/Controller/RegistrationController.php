@@ -21,17 +21,19 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class RegistrationController extends AbstractController
 {
     /**
-     * Page Register, Create
+     * * Page Register, Create
      *
      * @param Request $request
+     * @param UserAuthenticator $authenticator
      * @param UserPasswordHasherInterface $userPasswordHasher
      * @param UserAuthenticatorInterface $userAuthenticator
-     * @param UserAuthenticator $authenticator
      * @param EntityManagerInterface $entityManager
      * @return Response
      */
     #[Route('/register', name: 'app_register', methods: ['GET', 'POST'])]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, UserAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
+    public function register(Request $request, UserAuthenticator $authenticator, 
+        UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, 
+        EntityManagerInterface $entityManager): Response
     {
         $user = new User();
         $user->setRoles(['ROLE_USER']);
