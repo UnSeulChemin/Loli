@@ -52,7 +52,7 @@
     {% if app.user %}
         {% if is_granted('ROLE_ADMIN') %}
             <h2 class="padding-top">Read all messages</h2>
-            <a class="a-button" href="{{ path('app_contact_read') }}">Show Contacts</a>
+            <a class="a-button" href="{{ path('app_admin_contacts') }}">Show Contacts</a>
         {% endif %}
     {% endif %} 
 

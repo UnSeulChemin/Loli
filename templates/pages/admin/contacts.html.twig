@@ -33,7 +33,7 @@
                 <p><span class="bold">Date :</span> {{ contact.createdAt|date('d/m/Y') }}</p>
             </div>    
             <div>
-                <a class="a-button" href="{{ path('app_contact_delete', { id: contact.id }) }}" class="btn btn-warning">Supprimer</a>
+                <a class="a-button" href="{{ path('app_admin_contacts_delete', { id: contact.id }) }}" class="btn btn-warning">Supprimer</a>
             </div>
         </div>
     {% endfor %}
