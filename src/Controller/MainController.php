@@ -44,7 +44,7 @@ class MainController extends AbstractController
      * @return Response
      */
     #[Route('/loli/page/', name: 'loli', methods: ['GET'])]
-    public function mainRead(Request $request, ImageRepository $image, PaginatorInterface $paginator): Response
+    public function mainPaginate(Request $request, ImageRepository $image, PaginatorInterface $paginator): Response
     {
         $images = $paginator->paginate(
             $image->findBy([], ['id' => 'DESC']),

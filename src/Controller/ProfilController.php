@@ -33,15 +33,15 @@ class ProfilController extends AbstractController
     }
 
     /**
-     * Page Profil, Edit Name
+     * * Page Profil, Edit Name
      *
      * @param Request $request
      * @param User $user
      * @param EntityManagerInterface $manager
      * @return Response
      */
-    #[Route('/profil/edit/name/{id}', name: 'app_profil_edit_name', methods: ['GET', 'POST'])]
-    public function profilEditName(Request $request, User $user, EntityManagerInterface $manager): Response
+    #[Route('/profil/name/{id}', name: 'app_profil_name', methods: ['GET', 'POST'])]
+    public function profilName(Request $request, User $user, EntityManagerInterface $manager): Response
     {
         $form = $this->createForm(UserEditNameFormType::class, $user);
         $form->handleRequest($request);
@@ -56,22 +56,14 @@ class ProfilController extends AbstractController
             return $this->redirectToRoute('app_profil');
         }
 
-        return $this->render('pages/profil/profil_edit_name.html.twig', compact('form'));
+        return $this->render('pages/profil/profil_name.html.twig', compact('form'));
     }
 
-    /**
-     * Page Profil, Edit Password
-     *
-     * @param Request $request
-     * @param User $user
-     * @param EntityManagerInterface $manager
-     * @param UserPasswordHasherInterface $hasher
-     * @param UserAuthenticatorInterface $userAuthenticator
-     * @param UserAuthenticator $authenticator
-     * @return Response
-     */
-    #[Route('/profil/edit/password/{id}', name: 'app_profil_edit_password', methods: ['GET', 'POST'])]
-    public function profilEditPassword(Request $request, User $user, EntityManagerInterface $manager, UserPasswordHasherInterface $hasher, UserAuthenticatorInterface $userAuthenticator, UserAuthenticator $authenticator): Response
+
+    #[Route('/profil/password/{id}', name: 'app_profil_password', methods: ['GET', 'POST'])]
+    public function profilEditPassword(Request $request, User $user, UserAuthenticator $authenticator,
+        UserPasswordHasherInterface $hasher, UserAuthenticatorInterface $userAuthenticator,
+        EntityManagerInterface $manager): Response
     {
         $form = $this->createForm(UserEditPasswordFormType::class, $user);
         $form->handleRequest($request);
@@ -98,6 +90,6 @@ class ProfilController extends AbstractController
             return $this->redirectToRoute('app_profil');
         }
 
-        return $this->render('pages/profil/profil_edit_password.html.twig', compact('form'));
+        return $this->render('pages/profil/profil_password.html.twig', compact('form'));
     }
 }
