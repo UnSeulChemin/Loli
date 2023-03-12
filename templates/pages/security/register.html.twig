@@ -8,6 +8,12 @@
 
     <h2>Register here</h2>
 
+    {% for message in app.flashes('success') %}
+        <div class="success-flash">
+            <p class="message-flash">{{ message }}</p>
+        </div>
+    {% endfor %}
+
     {% for message in app.flashes('warning') %}
         <div class="warning-flash">
             <p class="padding-bottom-none bold">{{ message }}</p>

@@ -8,14 +8,14 @@ use App\Security\UserAuthenticator;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 /**
  * Page Register
@@ -55,27 +55,26 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // return $userAuthenticator->authenticateUser(
-            //     $user,
-            //     $authenticator,
-            //     $request
-            // );
+            return $userAuthenticator->authenticateUser(
+                $user,
+                $authenticator,
+                $request
+            );
 
             // Email
-            $email = (new Email())
-            ->from('hello@example.com')
-            ->to('you@example.com')
-            //->cc('cc@example.com')
-            //->bcc('bcc@example.com')
-            //->replyTo('fabien@example.com')
-            //->priority(Email::PRIORITY_HIGH)
-            ->subject('Time for Symfony Mailer!')
-            ->text('Sending emails is fun again!')
-            ->html('<p>See Twig integration for better HTML integration!</p>');
+            // $email = (new TemplatedEmail())
+            // ->from('contact@lolissr.com')
+            // ->to($user->getEmail())
+            // ->subject('Your registration to LoliSSR')
+            // ->htmlTemplate('pages/emails/contact.html.twig')
+            // ->context([
+            //     'user' => $user
+            // ]);
 
-            $mailer->send($email);
+            // $mailer->send($email);
 
-            return $this->redirectToRoute('app_main_index');
+            // $this->addFlash('success', 'Your email message verification have been successfully sent !');
+            // return $this->redirectToRoute('app_register');
         }
 
         else if ($form->isSubmitted() && !$form->isValid())
