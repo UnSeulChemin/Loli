@@ -8,13 +8,13 @@ use App\Security\UserAuthenticator;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 
 /**
@@ -23,13 +23,14 @@ use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 class RegistrationController extends AbstractController
 {
     /**
-     * * Page Register, Create
+     * Page Register, Create
      *
      * @param Request $request
      * @param UserAuthenticator $authenticator
      * @param UserPasswordHasherInterface $userPasswordHasher
      * @param UserAuthenticatorInterface $userAuthenticator
      * @param EntityManagerInterface $entityManager
+     * @param MailerInterface $mailer
      * @return Response
      */
     #[Route('/register', name: 'app_register', methods: ['GET', 'POST'])]
