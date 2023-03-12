@@ -57,6 +57,11 @@ class ProfilController extends AbstractController
             return $this->redirectToRoute('app_profil');
         }
 
+        else if ($form->isSubmitted() && !$form->isValid())
+        {
+            $this->addFlash('warning', 'Complete the following step and try again.');
+        }
+
         return $this->render('pages/profil/profil_name.html.twig', compact('form'));
     }
 

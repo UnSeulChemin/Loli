@@ -1,12 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit{% endblock %}
+{% block title %}Name{% endblock %}
 
 {% block body %}
 
 {{ form_start(form) }}
 
     <h2>Edit name</h2>
+
+    {% for message in app.flashes('warning') %}
+        <div class="warning-flash">
+            <p class="padding-bottom-none bold">{{ message }}</p>
+            {{ form_errors(form.name) }}
+        </div>
+    {% endfor %}
 
     <div class="form-last-div-space">
         {{ form_label(form.name) }}
