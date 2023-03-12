@@ -53,6 +53,7 @@ class ProfilController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
+            $this->addFlash('success', 'Your name have been successfully edited !');
             return $this->redirectToRoute('app_profil');
         }
 
@@ -71,7 +72,7 @@ class ProfilController extends AbstractController
      * @return Response
      */    
     #[Route('/profil/password/{id}', name: 'app_profil_password', methods: ['GET', 'POST'])]
-    public function profilEditPassword(Request $request, User $user, UserAuthenticator $authenticator,
+    public function profilPassword(Request $request, User $user, UserAuthenticator $authenticator,
         UserPasswordHasherInterface $hasher, UserAuthenticatorInterface $userAuthenticator,
         EntityManagerInterface $manager): Response
     {
@@ -97,6 +98,7 @@ class ProfilController extends AbstractController
                 $request
             );
 
+            $this->addFlash('success', 'Your password have been successfully edited !');
             return $this->redirectToRoute('app_profil');
         }
 

@@ -25,7 +25,7 @@ class UserEditNameFormType extends AbstractType
                 ]
             ])
             ->add('submit', SubmitType::class, options:[
-                'label' => 'Submit',
+                'label' => 'Comfirm',
             ])
         ;
     }

@@ -6,6 +6,14 @@
 <article>
     <h2>Settings profil</h2>
 
+    {% for message in app.flashes('success') %}
+        <div class="success-flash margin-bottom">
+            <p class="message-flash">{{ message }}</p>
+        </div>
+    {% endfor %}
+
+    <div class="none"></div>
+
     <nav>
         <ul>
             <li><a class="a-button" href="{{ path('app_profil_name', { 'id': app.user.id }) }}">New name</a></li>
