@@ -21,10 +21,7 @@ class UserNameFormType extends AbstractType
                     'maxlength' => '20',
                     'autofocus' => null
                 ],
-                'label' => 'New name',
-                'label_attr' => [
-                    'class' => 'bold'
-                ]
+                'label' => 'New name'
             ])
             ->add('submit', SubmitType::class, options:[
                 'attr' => [
