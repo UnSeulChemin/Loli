@@ -18,6 +18,13 @@
         </div>
     {% endfor %}
 
+    <div class="none pass-verif warning-flash">
+        <p class="none pass-verif padding-bottom-none bold">Complete the following step and try again.</p>
+        <ul class="none pass-verif">
+            <li class="none pass-verif pass-verif-msg"></li>
+        </ul>
+    </div>
+
     <div>
         {{ form_label(registrationForm.email) }}
         {{ form_widget(registrationForm.email) }}
@@ -31,6 +38,11 @@
     <div>
         {{ form_label(registrationForm.plainPassword) }}
         {{ form_widget(registrationForm.plainPassword) }}
+    </div>
+
+    <div>
+        <label for="verif-pass" class="required">Comfirm Password</label>
+        <input type="password" id="verif-pass" name="register-verif-pass" required="required" minlength="5" maxlength="30">
     </div>
 
     <div class="font-last-div-chexbox-space">

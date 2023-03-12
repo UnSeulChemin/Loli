@@ -114,3 +114,8 @@ Marge, Flash, Form, Other
 {
     font-weight: bold;
 }
+
+.none
+{
+    display: none;
+}
