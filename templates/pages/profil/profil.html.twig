@@ -12,6 +12,12 @@
         </div>
     {% endfor %}
 
+    {% for message in app.flashes('warning') %}
+        <div class="warning-flash margin-bottom">
+            <p class="message-flash">{{ message }}</p>
+        </div>
+    {% endfor %}
+
     <div class="none"></div>
 
     <nav>

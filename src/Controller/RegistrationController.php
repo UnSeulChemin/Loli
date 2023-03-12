@@ -38,8 +38,15 @@ class RegistrationController extends AbstractController
         UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, 
         EntityManagerInterface $entityManager, MailerInterface $mailer): Response
     {
+        if ($this->getUser())
+        {
+            $this->addFlash('warning', 'You can\'t access to this page.');
+            return $this->redirectToRoute('app_profil');
+        }
+
         $user = new User();
         $user->setRoles(['ROLE_USER']);
+
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
