@@ -7,8 +7,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\IsTrue;
-use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -51,18 +50,11 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'autocomplete' => 'new-password',
                     'minlength' => '5',
-                    'maxlength' => '10'
+                    'maxlength' => '30'
                 ],
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'Password field can\'t be empty.',
-                    ]),
-                    new Length([
-                        'min' => 5,
-                        'max'=> 30,
-                        'minMessage' => 'Password shoud have at least {{ limit }} characters.',
-                        'maxMessage' => 'Password shoud have no more than {{ limit }} characters.'
-                    ]),
+                    new Regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/',
+                    "Password shoud have at least 5 characters, une maj, une min, 1 chiffre, 1 special character")
                 ],
                 'label' => 'Password'
             ])
