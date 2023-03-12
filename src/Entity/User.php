@@ -33,7 +33,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 100)]
     #[Assert\NotBlank(message: 'Name field can\'t be empty.')]
-    #[Assert\Length(min: 3, max: 10,
+    #[Assert\Length(min: 3, max: 20,
         minMessage: 'Name shoud have at least {{ limit }} characters.',
         maxMessage: 'Name shoud have no more than {{ limit }} characters.')]
     private ?string $name = null;

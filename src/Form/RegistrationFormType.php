@@ -31,7 +31,7 @@ class RegistrationFormType extends AbstractType
             ->add('name', TextType::class, options:[
                 'attr' => [
                     'minlength' => '3',
-                    'maxlength' => '10'
+                    'maxlength' => '20'
                 ],
                 'label' => 'Name'
             ])
@@ -54,7 +54,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new Regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/',
-                    "Password shoud have at least 5 characters, une maj, une min, 1 chiffre, 1 special character")
+                    "Password should have at least 5 characters, 1 uppercase, 1 lowercase, 1 digit, 1 special character")
                 ],
                 'label' => 'Password'
             ])

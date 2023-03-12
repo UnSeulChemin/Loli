@@ -17,7 +17,7 @@ class UserEditNameFormType extends AbstractType
             ->add('name', TextType::class, options:[
                 'attr' => [
                     'minlength' => '3',
-                    'maxlength' => '10'
+                    'maxlength' => '20'
                 ],
                 'label' => 'New name',
                 'label_attr' => [
