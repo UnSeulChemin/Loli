@@ -62,7 +62,9 @@ class RegistrationController extends AbstractController
                 $request
             );
 
-            // Email
+            // Email, Send Common Confirm Email, Without Verification Link
+            // For Email Verification Link, Do With Bundle
+
             // $email = (new TemplatedEmail())
             // ->from('contact@lolissr.com')
             // ->to($user->getEmail())
