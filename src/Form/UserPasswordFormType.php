@@ -34,7 +34,7 @@ class UserPasswordFormType extends AbstractType
                 'attr' => [
                     'class' => 'margin-bottom-none'
                 ],
-                'label' => 'Submit',
+                'label' => 'Comfirm',
             ])
         ;
     }
