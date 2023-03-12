@@ -27,6 +27,9 @@ class ContactController extends AbstractController
     public function contact(Request $request, EntityManagerInterface $manager): Response
     {
         $contact = new Contact();
+        // Relation ManyToOne, GetUserId
+        $contact->setUser($this->getUser());
+
         $form = $this->createForm(ContactFormType::class, $contact);
         $form->handleRequest($request);
 
