@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,7 +18,8 @@ class UserNameFormType extends AbstractType
             ->add('name', TextType::class, options:[
                 'attr' => [
                     'minlength' => '3',
-                    'maxlength' => '20'
+                    'maxlength' => '20',
+                    'autofocus' => null
                 ],
                 'label' => 'New name',
                 'label_attr' => [
