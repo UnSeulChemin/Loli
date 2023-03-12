@@ -3,18 +3,18 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\UserEditNameFormType;
-use App\Form\UserEditPasswordFormType;
+use App\Form\UserNameFormType;
+use App\Form\UserPasswordFormType;
 use App\Security\UserAuthenticator;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 /**
  * Page Profil
@@ -43,7 +43,7 @@ class ProfilController extends AbstractController
     #[Route('/profil/name/{id}', name: 'app_profil_name', methods: ['GET', 'POST'])]
     public function profilName(Request $request, User $user, EntityManagerInterface $manager): Response
     {
-        $form = $this->createForm(UserEditNameFormType::class, $user);
+        $form = $this->createForm(UserNameFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
@@ -76,7 +76,7 @@ class ProfilController extends AbstractController
         UserPasswordHasherInterface $hasher, UserAuthenticatorInterface $userAuthenticator,
         EntityManagerInterface $manager): Response
     {
-        $form = $this->createForm(UserEditPasswordFormType::class, $user);
+        $form = $this->createForm(UserPasswordFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid())
@@ -92,14 +92,13 @@ class ProfilController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-            return $userAuthenticator->authenticateUser(
-                $user,
-                $authenticator,
-                $request
-            );
-
             $this->addFlash('success', 'Your password have been successfully edited !');
             return $this->redirectToRoute('app_profil');
+        }
+
+        else if ($form->isSubmitted() && !$form->isValid())
+        {
+            $this->addFlash('warning', 'Complete the following step and try again.');
         }
 
         return $this->render('pages/profil/profil_password.html.twig', compact('form'));

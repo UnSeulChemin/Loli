@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class UserEditNameFormType extends AbstractType
+class UserNameFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -25,6 +25,9 @@ class UserEditNameFormType extends AbstractType
                 ]
             ])
             ->add('submit', SubmitType::class, options:[
+                'attr' => [
+                    'class' => 'margin-bottom-none'
+                ],
                 'label' => 'Comfirm',
             ])
         ;
@@ -34,6 +37,7 @@ class UserEditNameFormType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'attr' => ['id' => 'profil_name']
         ]);
     }
 }
