@@ -65,19 +65,20 @@ class AppFixtures extends Fixture
         // Images
         $images = [];
 
-        $count = 0;
+        // Filler, Image Name
+        $filler = 1;
 
-        for ($i = 1; $i <= 20; $i++)
+        for ($i = 1; $i <= 24; $i++)
         {
             $image = new Image();
-            $image->setName($count . '.jpg');
+            $image->setName($filler . '.jpg');
             $image->setType('可爱');
             $image->setGender('女');
 
             $images[] = $image;
             $manager->persist($image);
 
-            $count++;
+            $filler++;
         }        
 
         $manager->flush();
