@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\User;
 use App\Entity\Contact;
+use App\Entity\Image;
 use Faker\Factory;
 use Faker\Generator;
 
@@ -60,6 +61,24 @@ class AppFixtures extends Fixture
             $contacts[] = $contact;
             $manager->persist($contact);
         }
+
+        // Images
+        $images = [];
+
+        $count = 0;
+
+        for ($i = 1; $i <= 20; $i++)
+        {
+            $image = new Image();
+            $image->setName($count . '.jpg');
+            $image->setType('可爱');
+            $image->setGender('女');
+
+            $images[] = $image;
+            $manager->persist($image);
+
+            $count++;
+        }        
 
         $manager->flush();
     }
