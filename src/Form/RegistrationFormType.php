@@ -54,7 +54,7 @@ class RegistrationFormType extends AbstractType
                 ],
                 'constraints' => [
                     new Regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/',
-                    "Password should have at least 5 characters, 1 uppercase, 1 lowercase, 1 digit, 1 special character")
+                    "Password should have at least 5 characters, 1 uppercase, 1 lowercase, 1 digit, 1 special character.")
                 ],
                 'label' => 'Password'
             ])

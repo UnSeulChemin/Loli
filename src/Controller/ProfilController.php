@@ -48,6 +48,7 @@ class ProfilController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid())
         {
+            $user->setUpdatedAt(new \DateTimeImmutable());
             $user = $form->getData();
 
             $manager->persist($user);
@@ -93,6 +94,8 @@ class ProfilController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+
+            $user->setUpdatedAt(new \DateTimeImmutable());
 
             $manager->persist($user);
             $manager->flush();

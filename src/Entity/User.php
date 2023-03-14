@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use App\Entity\Trait\CreatedAtTrait;
+use App\Entity\Trait\UpdatedAtTrait;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 
@@ -19,6 +20,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     use CreatedAtTrait;
+    use UpdatedAtTrait;
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -56,6 +58,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable();
+        $this->updated_at = new \DateTimeImmutable();
         $this->contacts = new ArrayCollection();
     }
 
