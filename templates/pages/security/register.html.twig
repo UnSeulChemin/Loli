@@ -15,7 +15,7 @@
     {% endfor %}
 
     {% for message in app.flashes('warning') %}
-        <div class="warning-flash">
+        <div class="warning-flash" id="register_flash">
             <p class="padding-bottom-none bold">{{ message }}</p>
             {{ form_errors(registrationForm.email) }}
             {{ form_errors(registrationForm.name) }}
